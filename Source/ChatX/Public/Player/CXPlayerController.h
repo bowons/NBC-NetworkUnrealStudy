@@ -20,7 +20,7 @@ public:
 
     void SetChatMessageString(const FString& InChatMessageString);
 
-    void PrintChatMessageString(const FString& InChatMessageString);
+    void PrintChatMessageString(const FString& InChatMessageString) const;
 
 protected:
     UPROPERTY(EditDefaultsOnly)

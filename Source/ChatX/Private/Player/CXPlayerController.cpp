@@ -4,11 +4,17 @@
 #include "Player/CXPlayerController.h"
 #include "UI/CXChatInput.h"
 #include "Kismet/KismetSystemLibrary.h"
+#include "ChatX.h"
 
 void ACXPlayerController::BeginPlay()
 {
     Super::BeginPlay();
     
+    if (IsLocalController() == false)
+    {
+        return;
+    }
+
     FInputModeUIOnly InputModeUIOnly;
     SetInputMode(InputModeUIOnly);
 
@@ -29,7 +35,7 @@ void ACXPlayerController::SetChatMessageString(const FString& InChatMessageStrin
     PrintChatMessageString(ChatMessageString);
 }
 
-void ACXPlayerController::PrintChatMessageString(const FString& InChatMessageString)
+void ACXPlayerController::PrintChatMessageString(const FString& InChatMessageString) const
 {
-    UKismetSystemLibrary::PrintString(this, ChatMessageString, true, true, FLinearColor::Red, 5.0f);
+    ChatXFunctionLibrary::MyPrintString(this, InChatMessageString, 10.f);
 }
