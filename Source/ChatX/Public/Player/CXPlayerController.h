@@ -28,7 +28,13 @@ protected:
 
     UPROPERTY()
     TObjectPtr<UCXChatInput> ChatInputWidgetInstance;
-
+	
+	UFUNCTION(Client, Reliable)
+	void ClientRPCPrintChatMessageString(const FString& InChatMessageString);
+	
+	UFUNCTION(Server, Reliable)
+	void ServerRPCPrintChatMessageString(const FString& InChatMessageString);
+	
     FString ChatMessageString;
 
 };

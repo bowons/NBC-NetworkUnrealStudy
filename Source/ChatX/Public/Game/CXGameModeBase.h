@@ -14,4 +14,7 @@ class CHATX_API ACXGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
+public:
+	virtual void OnPostLogin(AController* NewPlayer) override;
+	
 };

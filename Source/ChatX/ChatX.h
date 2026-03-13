@@ -56,8 +56,8 @@ public:
         
         if (IsValid(InActor) == true)
         {
-            FString LocalRoleString = UEnum::GetValueAsString(TEXT("Engine.ENetRole"), InActor->GetLocalRole());;
-            FString RemoteRoleString = UEnum::GetValueAsString(TEXT("Engine.ENetRole"), InActor->GetRemoteRole());;
+            FString LocalRoleString = UEnum::GetValueAsString(TEXT("Engine.ENetRole"), InActor->GetLocalRole());
+            FString RemoteRoleString = UEnum::GetValueAsString(TEXT("Engine.ENetRole"), InActor->GetRemoteRole());
             
             RoleString = FString::Printf(TEXT("%s / %s"), *LocalRoleString, *RemoteRoleString);
         }
